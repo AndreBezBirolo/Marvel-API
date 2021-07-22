@@ -1,0 +1,134 @@
+:root {
+  --max-width-container: 1200px;
+  --button-primary-color: #232324;
+  --button-primary-bg: #c4c4c4;
+  --button-primary-hover-color: #232324;
+  --button-primary-hover-bg: #868585;
+}
+.container {
+  max-width: var(--max-width-container);
+  box-sizing: border-box;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/*
+Framework v1.1
+Data de atualização: 29/06/2021
+Autor: André J. Bez Birolo
+*/
+
+/* Gerais */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+* {
+  box-sizing: border-box;
+}
+.margin-auto {
+  margin: 0 auto;
+}
+.transition {
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+/* Disposição dos itens */
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.flex-auto-3 {
+  flex: 1 0 290px;
+}
+.flex-auto-4 {
+  flex: 1 0 250px;
+}
+.flex-auto-5 {
+  flex: 1 0 200px;
+}
+.wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.space-btwn {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.center-full {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.center-x-row,
+.center-y-column {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.center-y-row,
+.center-x-column {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.justify-start {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+}
+/* Textos */
+.txt-center {
+  text-align: center;
+}
+.font-light {
+  font-weight: 300;
+}
+.font-bold {
+  font-weight: bold;
+}
+.font-italic {
+  font-style: italic;
+}
+.font-uppercase {
+  text-transform: uppercase;
+}
+.font-capitalize {
+  text-transform: capitalize;
+}
+/* Responsivo */
+@media(min-width: 1023px) {
+  .w-50-t {
+    width: 50%;
+  }
+}
+@media(min-width:  767px) {
+  .w-50-m {
+    width: 50%;
+  }
+}
+@media(max-width: 1024px){
+  .hide-from-tablet {
+    display: none;
+  }
+}
+@media(max-width: 900px){
+  .hide-from-phone {
+    display: none;
+  }
+}
