@@ -111,7 +111,6 @@ main .characters-container .secondary-header .item {
   color: var(--smoke-color);
 }
 main .characters-container .list-container .character-card {
-  padding: 20px 24px;
   background-color: var(--white-color);
   columns: 3;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -120,8 +119,16 @@ main .characters-container .list-container .character-card {
   color: var(--dark-smoke-color);
   margin-bottom: 8px;
 }
+main .characters-container .list-container {
+  min-height: 25vh;
+}
 main .characters-container .list-container .character-card:hover {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+main .characters-container .list-container .character-card a {
+  padding: 20px 24px;
+  color: unset;
+  width: 100%;
 }
 main .characters-container .list-container .character-card .image {
   margin-right: 24px;
@@ -139,6 +146,29 @@ main .characters-container .list-container .character-card .events {
   overflow-y: auto;
   padding: 5px;
 }
+main .characters-container .list-container .character-card .series::-webkit-scrollbar-track,
+main .characters-container .list-container .character-card .events::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: var(--snow-color);
+}
+
+main .characters-container .list-container .character-card .series::-webkit-scrollbar,
+main .characters-container .list-container .character-card .events::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+main .characters-container .list-container .character-card .series::-webkit-scrollbar-thumb,
+main .characters-container .list-container .character-card .events::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: var(--dark-snow-color);
+}
+
 @media(max-width: 1024px) {
   main > div > .title {
     font-size: 2.6rem;
