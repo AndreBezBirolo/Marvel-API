@@ -71,6 +71,4 @@ const generatePagination = (page, limit, offset, total) => {
     //     advanceOne.title = 'Avançar um'
     //     paginationContainer.appendChild(advanceOne)
     // }
-
-
 }

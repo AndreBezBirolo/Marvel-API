@@ -133,6 +133,11 @@ main .characters-container .list-container .character-card a {
 main .characters-container .list-container .character-card .image {
   margin-right: 24px;
   border-radius: 4px;
+  width: 48px;
+  max-width: 48px;
+  height: 48px;
+  max-height: 48px;
+  object-fit: cover;
 }
 main .characters-container .list-container .character-card p.name {
   width: 80%;
