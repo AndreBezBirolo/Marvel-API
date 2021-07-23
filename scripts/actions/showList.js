@@ -22,12 +22,13 @@ const displayList = async (search, offset) => {
         results.map((hero) => {
             const series = objectToString(hero.series)
             const events = objectToString(hero.events)
-            const card = new heroCard(hero.thumbnail.path, hero.thumbnail.extension, hero.name, series, events, hero.urls[0].url).generateHTML()
+            const card = new heroCard(hero.thumbnail.path, hero.thumbnail.extension, hero.name, series, events, hero.urls[0].url, hero.id).generateHTML()
             listContainer.appendChild(card)
         })
         generatePagination(0, 10, 10, totalItems)
     });
     await activePagination()
+    await heroesDetails()
     await loading('off')
 
 }

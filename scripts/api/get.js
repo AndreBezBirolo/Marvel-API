@@ -9,9 +9,10 @@ const FetchCharacters = async (search, offset) => {
     } else {
         GET = await fetch(API_URL)
     }
-
     if (GET.ok) {
+        console.log('GET: ', GET)
         const JSON = await GET.json();
+        console.log('JSON: ', JSON.data)
         // Return object data
         return JSON.data
     } else {

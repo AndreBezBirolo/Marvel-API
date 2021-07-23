@@ -1,23 +1,24 @@
 // This class create a HTML componente of hero
 class heroCard {
-    constructor(thumbnailPath, thumbnailExtension, name, series, events, url) {
+    constructor(thumbnailPath, thumbnailExtension, name, series, events, url, id) {
         this.thumbnailPath = thumbnailPath
         this.thumbnailExtension = thumbnailExtension
         this.name = name
         this.series = series
         this.events = events
         this.url = url
+        this.id = id
     }
 
     generateHTML() {
         const cardContainer = document.createElement('li')
         cardContainer.classList.add('character-card', 'flex')
+        cardContainer.dataset.id = this.id
+
 
         const urlContainer = document.createElement('a')
         urlContainer.classList.add('flex','center-y-row')
-        urlContainer.href = this.url
-        urlContainer.target = '_blank'
-        urlContainer.rel = 'noreferrer noopenner'
+        urlContainer.href = 'Javascript:;'
         cardContainer.appendChild(urlContainer)
 
         const imgObject = document.createElement('img')

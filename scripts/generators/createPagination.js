@@ -1,7 +1,7 @@
 // This function just create the HTML pagination
 const generatePagination = (page, limit, offset, total) => {
     let pageCount = total / limit
-    pageCount = pageCount.toFixed(0)
+    pageCount = Math.round(pageCount) + 1
     const paginationContainer = document.querySelector('.pagination-container')
     const limitPagination = 5
     let actualPage = Number(window.localStorage.getItem('page'))
@@ -33,7 +33,7 @@ const generatePagination = (page, limit, offset, total) => {
     let start = actualPage - 2
     let finish
     if (start < 2) {
-        start = 1
+        start =  1
         finish = 5
     } else if (actualPage >= (pageCount - 1)) {
         finish = pageCount
@@ -44,7 +44,7 @@ const generatePagination = (page, limit, offset, total) => {
 
     // Pagination items
     for (start; start <= finish; start++) {
-        let skip = offset * start
+        let skip = offset * (start - 1)
         const aContainer = document.createElement('a')
         if (start === actualPage) {
             aContainer.classList.add('pagination-number', 'active')
@@ -72,7 +72,7 @@ const generatePagination = (page, limit, offset, total) => {
             advanceAll.innerHTML = '>>'
             advanceAll.title = 'Ir para o final'
             advanceAll.classList.add('advance-to-finish', 'font-bold', 'fast')
-            advanceAll.dataset.offset = offset * pageCount
+            advanceAll.dataset.offset = offset * (pageCount - 1)
             advanceAll.dataset.page = pageCount
             paginationContainer.appendChild(advanceAll)
 
