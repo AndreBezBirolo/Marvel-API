@@ -6,7 +6,7 @@ const resetList = (type) => {
             item.remove();
         })
     } else if (type === 'pagination') {
-        const itemsPagination = document.querySelectorAll('.pagination-container .pagination-number');
+        const itemsPagination = document.querySelectorAll('.pagination-container a');
         itemsPagination.forEach((item) => {
             item.remove();
         })
