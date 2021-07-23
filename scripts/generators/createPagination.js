@@ -1,3 +1,4 @@
+// This function just create the HTML pagination
 const generatePagination = (page, limit, offset, total) => {
     let pageCount = total / limit
     pageCount = pageCount.toFixed(0)
@@ -5,6 +6,7 @@ const generatePagination = (page, limit, offset, total) => {
     const limitPagination = 5
     let actualPage = Number(window.localStorage.getItem('page'))
 
+    // Clean the list of pagination items
     resetList('pagination')
 
 

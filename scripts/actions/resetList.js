@@ -1,3 +1,4 @@
+// This function clean the code of list or pagination, individually
 const resetList = (type) => {
     if (type === 'list') {
         const listContainer = document.querySelector('.list-container');
@@ -10,6 +11,4 @@ const resetList = (type) => {
             item.remove();
         })
     }
-
-
 }

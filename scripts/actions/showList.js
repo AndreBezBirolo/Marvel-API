@@ -14,6 +14,7 @@ const displayList = async (search, offset) => {
     const listContainer = document.querySelector('.list-container');
     let totalItems
     await FetchCharacters(search, offset).then((data) => {
+        console.log(data.results)
         resetList('list')
         totalItems = data.total
         const results = data.results

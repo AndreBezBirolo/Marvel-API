@@ -1,3 +1,4 @@
+// This class create a HTML componente of hero
 class heroCard {
     constructor(thumbnailPath, thumbnailExtension, name, series, events, url) {
         this.thumbnailPath = thumbnailPath

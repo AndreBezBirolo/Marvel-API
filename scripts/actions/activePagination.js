@@ -1,11 +1,14 @@
+// This function active the pagination items to make them clickable and realize the fetch with offset
 const activePagination = () => {
+    // Get all pagination items
     const itemsPagination = document.querySelectorAll('.pagination-container .pagination-number');
     itemsPagination.forEach((item) => {
         let offset = item.dataset.offset
         item.addEventListener('click', () => {
+            // Realize the fetch
             displayList('', `&offset=${offset}`)
+            // Update the page in cache
             window.localStorage.setItem('page', item.dataset.page)
         })
     })
-    console.log('Ativou a páginação!')
 }
