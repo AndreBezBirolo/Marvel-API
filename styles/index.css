@@ -12,6 +12,7 @@
 /* General */
 html {
   font-family: 'PT Sans Caption', sans-serif;
+  scroll-behavior: smooth;
 }
 /* Header */
 header.primary-header {

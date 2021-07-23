@@ -9,6 +9,7 @@ const activePagination = () => {
             displayList('', `&offset=${offset}`)
             // Update the page in cache
             window.localStorage.setItem('page', item.dataset.page)
+            window.scroll('0', '0')
         })
     })
 }
