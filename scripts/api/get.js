@@ -1,13 +1,15 @@
-const FetchCharacters = async (search, offset) => {
+const FetchCharacters = async (search, offset, id) => {
     let GET
 
     // Set params, if is search or is offset
     if (search && search !== '') {
-        GET = await fetch(API_URL + search)
+        GET = await fetch(API_LIST_URL + search)
     } else if (offset && offset !== '') {
-        GET = await fetch(API_URL + offset)
+        GET = await fetch(API_LIST_URL + offset)
+    } else if (id && id !== '') {
+        GET = await fetch(API_CHARACTER_URL + id + CONFIG_API)
     } else {
-        GET = await fetch(API_URL)
+        GET = await fetch(API_LIST_URL)
     }
     if (GET.ok) {
         console.log('GET: ', GET)

@@ -192,7 +192,8 @@ main .characters-container .list-container .character-card .events {
   padding: 5px;
 }
 main .characters-container .list-container .character-card .series::-webkit-scrollbar-track,
-main .characters-container .list-container .character-card .events::-webkit-scrollbar-track
+main .characters-container .list-container .character-card .events::-webkit-scrollbar-track,
+.popup-container .links-container::-webkit-scrollbar-track
 {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   border-radius: 10px;
@@ -200,18 +201,21 @@ main .characters-container .list-container .character-card .events::-webkit-scro
 }
 
 main .characters-container .list-container .character-card .series::-webkit-scrollbar,
-main .characters-container .list-container .character-card .events::-webkit-scrollbar
+main .characters-container .list-container .character-card .events::-webkit-scrollbar,
+.popup-container .links-container::-webkit-scrollbar
 {
   width: 6px;
-  background-color: #F5F5F5;
+  background-color: transparent;
 }
 
 main .characters-container .list-container .character-card .series::-webkit-scrollbar-thumb,
-main .characters-container .list-container .character-card .events::-webkit-scrollbar-thumb
+main .characters-container .list-container .character-card .events::-webkit-scrollbar-thumb,
+.popup-container .links-container::-webkit-scrollbar-thumb
+
 {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-  background-color: var(--dark-snow-color);
+  background-color: var(--dark-blue-color);
 }
 
 @media(max-width: 1024px) {
@@ -322,4 +326,37 @@ footer .container .pagination-number.active {
 
 .loading.visible {
   opacity: 1;
+}
+
+/* Popup container */
+.popup-container {
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  background-color: rgba(0,0,0,.45);
+  box-shadow: 0 -4px 8px rgb(0 0 0 / 20%);
+}
+.popup-container .container {
+  padding: 15px;
+}
+.popup-container .image-container {
+  width: 200px;
+  height: auto;
+  max-height: 240px;
+  margin-right: 24px;
+}
+.popup-container img {
+  width: 100%;
+  height: auto;
+}
+.popup-container .links-container {
+  min-height: 48px;
+  max-height: 240px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.popup-container .links-container a {
+  color: white;
+  padding: 4px;
+  margin-bottom: 4px;
 }

@@ -10,5 +10,10 @@ const resetList = (type) => {
         itemsPagination.forEach((item) => {
             item.remove();
         })
+    } else if (type === 'popup') {
+        const popup = document.querySelector('.popup-container')
+        if (popup) {
+            popup.remove()
+        }
     }
 }

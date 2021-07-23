@@ -1,4 +1,4 @@
-class createPopup {
+class heroPopup {
     constructor(name, thumbnailPath, thumbnailExtension, otherLinks) {
         this.thumbnailPath = thumbnailPath
         this.thumbnailExtension = thumbnailExtension
@@ -7,9 +7,12 @@ class createPopup {
     }
 
     generateHTML() {
+        const popupSection = document.createElement('div')
+        popupSection.classList.add('popup-container')
+
         const popupContainer = document.createElement('div')
-        popupContainer.classList.add('popup-container', 'flex', 'center-full')
-        popupContainer.dataset.id = this.id
+        popupContainer.classList.add('container', 'flex', 'center-full')
+        popupSection.appendChild(popupContainer)
 
         const imageContainer = document.createElement('div')
         imageContainer.classList.add('image-container')
@@ -17,9 +20,17 @@ class createPopup {
         const image = document.createElement('img')
         image.src = this.thumbnailPath+'.'+this.thumbnailExtension
         image.classList.add('image')
-        image.width = 48
-        image.height = 48
+        image.width = 300
+        image.height = 300
         image.alt = this.name
-        popupContainer.appendChild(image)
+        imageContainer.appendChild(image)
+        popupContainer.appendChild(imageContainer)
+
+        const linksContainer = document.createElement('div')
+        linksContainer.classList.add('links-container')
+        linksContainer.appendChild(this.otherLinks)
+        popupContainer.appendChild(linksContainer)
+
+        return popupSection
     }
 }
