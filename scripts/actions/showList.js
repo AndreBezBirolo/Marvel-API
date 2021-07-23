@@ -13,6 +13,7 @@ const objectToString = (object) => {
 const displayList = async (search, offset) => {
     const listContainer = document.querySelector('.list-container');
     let totalItems
+    loading('on')
     await FetchCharacters(search, offset).then((data) => {
         console.log(data.results)
         resetList('list')
@@ -27,6 +28,7 @@ const displayList = async (search, offset) => {
         generatePagination(0, 10, 10, totalItems)
     });
     await activePagination()
+    await loading('off')
 
 }
 

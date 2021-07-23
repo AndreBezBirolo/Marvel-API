@@ -96,6 +96,11 @@ main .search-container .input-container .search-icon {
   right: 16px;
   pointer-events: none;
 }
+
+main .characters-container {
+  position: relative;
+}
+
 main .characters-container .secondary-header {
   columns: 3;
   padding: 0 24px;
@@ -230,13 +235,42 @@ footer .container .pagination-number {
   footer .container .fast {
     margin-right: 0.9rem;
   }
+
   footer .container .pagination-number {
     padding: 6px 14px;
   }
 }
+
 footer .container .pagination-number:hover,
 footer .container .pagination-number.active {
   color: var(--white-color);
   background-color: var(--dark-blue-color);
   border: 1px solid var(--dark-blue-color);
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  position: absolute;
+  background-color: rgba(0, 0, 0, .2);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: .2s;
+  border-radius: 8px;
+}
+
+.loading svg {
+  width: 100%;
+  height: 100%;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.loading.visible {
+  opacity: 1;
 }
