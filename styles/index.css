@@ -38,6 +38,8 @@ header .user-content .button-cb {
   background-color: var(--snow-color);
   border-radius: 4px;
   margin-left: 1.6rem;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
   transition: .2s;
 }
 header .user-content .button-cb:hover {
@@ -65,7 +67,10 @@ main .search-container {
 main .search-container label {
   font-size: 1.6rem;
   line-height: 2.4rem;
-  color: var(--dark-smoke-color)
+  color: var(--dark-smoke-color);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 main .search-container input {
   margin-top: 8px;
@@ -80,6 +85,22 @@ main .search-container input {
 main .search-container input:hover,
 main .search-container input:focus {
   border: 1px solid var(--dark-smoke-color);
+}
+main .search-container input::-webkit-input-placeholder {
+  font-size: 1.4rem;
+  color: var(--smoke-color);
+}
+main .search-container input::-moz-placeholder {
+  font-size: 1.4rem;
+  color: var(--smoke-color);
+}
+main .search-container input:-ms-input-placeholder {
+  font-size: 1.4rem;
+  color: var(--smoke-color);
+}
+main .search-container input::-ms-input-placeholder {
+  font-size: 1.4rem;
+  color: var(--smoke-color);
 }
 main .search-container input::placeholder {
   font-size: 1.4rem;
@@ -103,6 +124,8 @@ main .characters-container {
 }
 
 main .characters-container .secondary-header {
+  -webkit-columns: 3;
+  -moz-columns: 3;
   columns: 3;
   padding: 0 24px;
   margin-bottom: 9px;
@@ -113,19 +136,32 @@ main .characters-container .secondary-header .item {
   line-height: 1.6rem;
   color: var(--smoke-color);
 }
+
+main .characters-container .list-container {
+  min-height: 25vh;
+}
 main .characters-container .list-container .character-card {
   background-color: var(--white-color);
+  -webkit-columns: 3;
+  -moz-columns: 3;
   columns: 3;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -webkit-transition: .2s;
+  -o-transition: .2s;
   transition: .2s;
   border-radius: 4px;
   color: var(--dark-smoke-color);
   margin-bottom: 8px;
+  max-height: 110px;
 }
-main .characters-container .list-container {
-  min-height: 25vh;
+@media(min-width: 1023px) {
+  main .characters-container .list-container .character-card {
+    height: 110px;
+  }
 }
 main .characters-container .list-container .character-card:hover {
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
 }
 main .characters-container .list-container .character-card a {
@@ -136,10 +172,11 @@ main .characters-container .list-container .character-card a {
 main .characters-container .list-container .character-card .image {
   margin-right: 24px;
   border-radius: 4px;
-  width: 48px;
+  min-width: 48px;
   max-width: 48px;
-  height: 48px;
+  min-height: 48px;
   max-height: 48px;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 main .characters-container .list-container .character-card p.name {
@@ -209,8 +246,8 @@ footer .container .fast {
 }
 footer .container .pagination-number,
 footer .container .fast {
-    margin-right: 1.6rem;
-    cursor: pointer;
+  margin-right: 1.6rem;
+  cursor: pointer;
 }
 
 footer .container .pagination-number {
@@ -221,6 +258,8 @@ footer .container .pagination-number {
   background-color: var(--snow-color);
   border: 1px solid var(--dark-snow-color);
   border-radius: 4px;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
   transition: .2s;
 }
 @media(max-width: 900px) {
@@ -229,7 +268,12 @@ footer .container .pagination-number {
     text-align: center;
   }
   header .user-content .name {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
   footer .container .pagination-number,
@@ -251,6 +295,8 @@ footer .container .pagination-number.active {
 
 /* Loading */
 .loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   background-color: rgba(0, 0, 0, .2);
@@ -261,6 +307,8 @@ footer .container .pagination-number.active {
   right: 0;
   opacity: 0;
   pointer-events: none;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
   transition: .2s;
   border-radius: 8px;
 }
