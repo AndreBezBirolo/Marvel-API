@@ -44,7 +44,7 @@ const generatePagination = (page, limit, offset, total) => {
 
     // Pagination items
     for (start; start <= finish; start++) {
-        let skip = offset * (start - 1)
+        let skip = offset * start
         const aContainer = document.createElement('a')
         if (start === actualPage) {
             aContainer.classList.add('pagination-number', 'active')
