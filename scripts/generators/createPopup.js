@@ -17,6 +17,14 @@ class heroPopup {
         const imageContainer = document.createElement('div')
         imageContainer.classList.add('image-container')
 
+        const closePopup = document.createElement('button')
+        closePopup.onclick = function () {
+            resetList('popup')
+        }
+        closePopup.title = 'Fechar popup'
+        closePopup.innerHTML = 'Fechar'
+        imageContainer.appendChild(closePopup)
+
         const image = document.createElement('img')
         image.src = this.thumbnailPath+'.'+this.thumbnailExtension
         image.classList.add('image')
