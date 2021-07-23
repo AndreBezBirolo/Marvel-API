@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 searchInput.value = ''
                 alert('Seu campo está vazio!')
             } else {
-                resetList()
                 displayList(`&name=${valueSearch}`)
             }
         } else {

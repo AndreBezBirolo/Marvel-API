@@ -1,10 +1,15 @@
-const resetList = () => {
-    const listContainer = document.querySelector('.list-container');
-    listContainer.querySelectorAll('li').forEach((item) => {
-        item.remove();
-    })
+const resetList = (type) => {
+    if (type === 'list') {
+        const listContainer = document.querySelector('.list-container');
+        listContainer.querySelectorAll('li').forEach((item) => {
+            item.remove();
+        })
+    } else if (type === 'pagination') {
+        const itemsPagination = document.querySelectorAll('.pagination-container .pagination-number');
+        itemsPagination.forEach((item) => {
+            item.remove();
+        })
+    }
+
+
 }
-document.querySelector('.button-cb').addEventListener('click', function(e) {
-    e.preventDefault()
-    resetList()
-})

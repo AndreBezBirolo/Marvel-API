@@ -9,9 +9,13 @@ const objectToString = (object) => {
         return 'No items'
     }
 }
-const displayList = (search) => {
+
+const displayList = async (search, offset) => {
     const listContainer = document.querySelector('.list-container');
-    FetchCharacters(search).then((data) => {
+    let totalItems
+    await FetchCharacters(search, offset).then((data) => {
+        resetList('list')
+        totalItems = data.total
         const results = data.results
         results.map((hero) => {
             const series = objectToString(hero.series)
@@ -19,5 +23,9 @@ const displayList = (search) => {
             const card = new heroCard(hero.thumbnail.path, hero.thumbnail.extension, hero.name, series, events, hero.urls[0].url).generateHTML()
             listContainer.appendChild(card)
         })
+        generatePagination(0, 10, 10, totalItems)
     });
+    await activePagination()
+
 }
+

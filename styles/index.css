@@ -201,7 +201,8 @@ footer .container .fast {
 }
 footer .container .pagination-number,
 footer .container .fast {
-  margin-right: 1.6rem;
+    margin-right: 1.6rem;
+    cursor: pointer;
 }
 
 footer .container .pagination-number {
