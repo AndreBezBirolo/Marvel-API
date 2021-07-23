@@ -39,8 +39,6 @@ const generatePagination = (page, limit, offset, total) => {
     }
 
     for (start; start <= finish; start++) {
-        console.log(actualPage)
-        console.log(`Start: ${start} && Finish: ${finish}`)
         let skip = offset * (start - 1)
         const aContainer = document.createElement('a')
         if (start === actualPage) {

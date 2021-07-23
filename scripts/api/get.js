@@ -1,7 +1,12 @@
 const FetchCharacters = async (search, offset) => {
     let GET
-    search && search !== '' ? GET = await fetch(API_URL + search) : GET = await fetch(API_URL);
-    offset && offset !== '' ? GET = await fetch(API_URL + offset) : GET = await fetch(API_URL)
+    if (search && search !== '') {
+        GET = await fetch(API_URL + search)
+    } else if (offset && offset !== '') {
+        GET = await fetch(API_URL + offset)
+    } else {
+        GET = await fetch(API_URL)
+    }
 
     if (GET.ok) {
         const JSON = await GET.json();

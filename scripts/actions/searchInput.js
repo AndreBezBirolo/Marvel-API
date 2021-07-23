@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search');
     searchInput.onkeyup = (e) => {
+        console.log('Digitou algo')
         let valueSearch = searchInput.value;
         if (valueSearch ) {
             if (valueSearch === ' ') {
@@ -13,4 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
             displayList()
         }
     }
+    console.log('Search Input')
 })
