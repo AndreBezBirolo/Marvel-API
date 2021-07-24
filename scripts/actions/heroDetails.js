@@ -5,11 +5,6 @@ const heroesDetails = () => {
     heroes.forEach((hero) => {
         hero.addEventListener('click', async () => {
             heroID = hero.dataset.id
-            // Criar o popup aqui
-            // popup = new heroPopup()
-            // main.appendChild(popup)
-            // displayPopup(heroID);
-
 
             await FetchCharacters('', '', heroID).then(async ({results}) => {
                 const hero = results[0];
@@ -35,9 +30,11 @@ const heroesDetails = () => {
                         groupStoryHTML.appendChild(storyHTML)
                     })
                 }
-
+                // Create popup HTML
                 const popupCard = new heroPopup(name, thumbnailPath, thumbnailExtension, groupStoryHTML).generateHTML()
+                // Reset if have any popup open
                 await resetList('popup')
+                // Show de popup in front
                 main.appendChild(popupCard)
             })
         })

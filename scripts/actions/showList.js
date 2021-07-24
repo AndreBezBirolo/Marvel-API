@@ -1,3 +1,4 @@
+// Transform names in object to a string
 const objectToString = (object) => {
     if (object.returned !== 0) {
         let string = ''
@@ -10,12 +11,12 @@ const objectToString = (object) => {
     }
 }
 
+// Shows list in front
 const displayList = async (search, offset) => {
     const listContainer = document.querySelector('.list-container');
     let totalItems
     loading('on')
     await FetchCharacters(search, offset).then((data) => {
-        console.log(data.results)
         resetList('list')
         totalItems = data.total
         const results = data.results

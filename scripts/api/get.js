@@ -12,9 +12,7 @@ const FetchCharacters = async (search, offset, id) => {
         GET = await fetch(API_LIST_URL)
     }
     if (GET.ok) {
-        console.log('GET: ', GET)
         const JSON = await GET.json();
-        console.log('JSON: ', JSON.data)
         // Return object data
         return JSON.data
     } else {
