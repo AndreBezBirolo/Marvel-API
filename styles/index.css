@@ -304,6 +304,12 @@ footer .container .pagination-number {
 
   }
 }
+@media(max-width: 768px) {
+  main .search-container .input-container,
+  main .search-container .input-container input {
+    max-width: unset;
+  }
+}
 
 footer .container .pagination-number:hover,
 footer .container .pagination-number.active {
