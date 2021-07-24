@@ -227,7 +227,11 @@ main .characters-container .list-container .character-card .events::-webkit-scro
     margin-bottom: 20px;
   }
 }
-
+@media(max-width: 900px) {
+  main .characters-container .secondary-header {
+    padding: 0 calc(48px + 24px + 24px);
+  }
+}
 @media(max-width: 768px) {
   main > div > .title {
     font-size: 2.2rem;
