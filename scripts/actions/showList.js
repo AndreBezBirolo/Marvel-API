@@ -6,7 +6,7 @@ const objectToString = (object) => {
         })
         return string
     } else {
-        return 'No items'
+        return 'Nenhum dado informado'
     }
 }
 

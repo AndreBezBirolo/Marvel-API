@@ -21,7 +21,7 @@ const heroesDetails = () => {
                 groupStoryHTML.classList.add('flex', 'column')
                 if (storiesObject.length === 0) {
                     const storyHTML = document.createElement('a')
-                    storyHTML.innerHTML = 'No items here'
+                    storyHTML.innerHTML = 'Nenhum dado informado'
                     storyHTML.href = MARVEL_URL
                     groupStoryHTML.appendChild(storyHTML)
                 } else {
