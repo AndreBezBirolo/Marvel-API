@@ -1,9 +1,5 @@
 :root {
   --max-width-container: 1200px;
-  --button-primary-color: #232324;
-  --button-primary-bg: #c4c4c4;
-  --button-primary-hover-color: #232324;
-  --button-primary-hover-bg: #868585;
 }
 .container {
   max-width: var(--max-width-container);
