@@ -29,17 +29,30 @@ const generatePagination = (page, limit, offset, total) => {
         paginationContainer.appendChild(prevOne)
     }
 
-
     let start = actualPage - 2
     let finish
-    if (start < 2) {
-        start =  1
-        finish = 5
-    } else if (actualPage >= (pageCount - 1)) {
-        finish = pageCount
+
+    // Show 3 items on mobile and 5 on desktop
+    if (window.matchMedia("(max-width: 900px)").matches) {
+        if (start < 1) {
+            start =  1
+            finish = 3
+        } else if (actualPage >= (pageCount - 1)) {
+            finish = pageCount
+        } else {
+            start = actualPage - 1
+            finish = actualPage + 1
+        }
     } else {
-        start = actualPage - 2
-        finish = actualPage + 2
+        if (start < 2) {
+            start =  1
+            finish = 5
+        } else if (actualPage >= (pageCount - 1)) {
+            finish = pageCount
+        } else {
+            start = actualPage - 2
+            finish = actualPage + 2
+        }
     }
 
     // Pagination items
